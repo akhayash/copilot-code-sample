@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Plus, Filter, Search } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -124,10 +125,12 @@ const ProjectsPage = () => {
             現在進行中のプロジェクト一覧と詳細を確認できます。
           </p>
         </div>
-        <Button className="sm:w-auto w-full">
-          <Plus className="mr-2 h-4 w-4" />
-          新規プロジェクト
-        </Button>
+        <Link href="/projects/new">
+          <Button className="sm:w-auto w-full">
+            <Plus className="mr-2 h-4 w-4" />
+            新規プロジェクト計画
+          </Button>
+        </Link>
       </div>
 
       <div className="flex flex-col sm:flex-row gap-4">
