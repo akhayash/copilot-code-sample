@@ -57,6 +57,7 @@ graph TD
   subgraph "ページ構成"
     Dashboard[ダッシュボード]
     ProjectList[プロジェクト一覧]
+    ProjectPlanning[プロジェクト計画]
     ProjectDetail[プロジェクト詳細]
     TaskManager[タスク管理]
     NLPInput[自然言語入力]
@@ -69,8 +70,10 @@ graph TD
   Pages --> Hooks
   UIComponents --> Utils
 
-  Dashboard --> NLPInput
-  ProjectList --> ProjectDetail
+  Dashboard --> ProjectList
+  ProjectList --> ProjectPlanning
+  ProjectPlanning --> NLPInput
+  ProjectPlanning --> ProjectDetail
   ProjectDetail --> TaskManager
 ```
 
