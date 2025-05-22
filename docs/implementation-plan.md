@@ -80,8 +80,8 @@ gantt
 - **検証**: Zod
 
 ### データベース・ストレージ
-- **データベース**: Prisma ORMまたはDrizzle + PostgreSQL
-- **ファイルストレージ**: Amazon S3またはFirebase Storage
+- **データベース**: Prisma ORMまたはDrizzle + Azure Database for PostgreSQL
+- **ファイルストレージ**: Azure Blob Storage
 
 ### インフラストラクチャ
 - **ホスティング**: Azure Static Web Apps
