@@ -29,10 +29,22 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
+## CI/CD 環境
+
+このプロジェクトは、GitHub ActionsとAzure Static Web Appsを使用した自動CI/CDワークフローで、以下の2つの環境が設定されています：
+
+- **本番環境（mainブランチ）**: [https://thankful-meadow-05eade300.6.azurestaticapps.net](https://thankful-meadow-05eade300.6.azurestaticapps.net)
+- **開発環境（main以外のブランチ）**: [https://white-wave-0cdad0c00.6.azurestaticapps.net](https://white-wave-0cdad0c00.6.azurestaticapps.net)
+
+GitHub Actionsワークフローは以下のように自動的にデプロイします：
+- main以外のブランチへの変更は開発環境へ
+- mainブランチにマージされた変更は本番環境へ
+
+この設定により、変更を本番環境にマージする前に開発環境でレビューとテストを行うことができます。
+
 ## Deploy on Azure Static Web Apps
 
 このNext.jsアプリケーションは、[Azure Static Web Apps](https://azure.microsoft.com/services/app-service/static/)にデプロイするように設定されています。GitHub Actionsワークフローを使用して、開発環境と本番環境の2つの環境にデプロイができます。
-
 Azure Static Web AppsはNext.jsアプリケーションのホスティングに最適で、Azure Functionsと統合してサーバーレス機能を提供します。
 
 詳細については、[Azure Static Web Appsのドキュメント](https://docs.microsoft.com/azure/static-web-apps/)および[Next.jsのデプロイドキュメント](https://nextjs.org/docs/app/building-your-application/deploying)を参照してください。
