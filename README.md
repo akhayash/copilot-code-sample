@@ -29,6 +29,19 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
+## CI/CD Environments
+
+This project is set up with automated CI/CD workflows using GitHub Actions and Azure Static Web Apps with two separate environments:
+
+- **Production Environment (main branch)**: [https://thankful-meadow-05eade300.6.azurestaticapps.net](https://thankful-meadow-05eade300.6.azurestaticapps.net)
+- **Development Environment (non-main branches)**: [https://white-wave-0cdad0c00.6.azurestaticapps.net](https://white-wave-0cdad0c00.6.azurestaticapps.net)
+
+The GitHub Actions workflow automatically deploys:
+- Changes to non-main branches to the development environment
+- Changes merged to the main branch to the production environment
+
+This setup allows for reviewing and testing changes in the development environment before they are merged to production.
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
