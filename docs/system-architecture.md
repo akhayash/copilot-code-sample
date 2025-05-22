@@ -114,20 +114,20 @@ graph TD
   end
 
   subgraph "本番環境"
-    CDN[CDN]
-    Vercel[Vercelホスティング]
-    ServerlessAPI[サーバーレス関数]
+    CDN[Azure CDN]
+    AzureStaticWeb[Azure Static Web Apps]
+    AzureFunctions[Azure Functions]
   end
 
   subgraph "データストア"
-    DB[(データベース)]
+    DB[(Azure データベース)]
     Backup[(バックアップ)]
   end
 
-  Dev --> Vercel
-  Tests --> Vercel
-  Vercel --> CDN
-  Vercel --> ServerlessAPI
-  ServerlessAPI --> DB
+  Dev --> AzureStaticWeb
+  Tests --> AzureStaticWeb
+  AzureStaticWeb --> CDN
+  AzureStaticWeb --> AzureFunctions
+  AzureFunctions --> DB
   DB --> Backup
 ```
