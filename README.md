@@ -29,8 +29,10 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Deploy on Azure Static Web Apps
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+このNext.jsアプリケーションは、[Azure Static Web Apps](https://azure.microsoft.com/services/app-service/static/)にデプロイするように設定されています。GitHub Actionsワークフローを使用して、開発環境と本番環境の2つの環境にデプロイができます。
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Azure Static Web AppsはNext.jsアプリケーションのホスティングに最適で、Azure Functionsと統合してサーバーレス機能を提供します。
+
+詳細については、[Azure Static Web Appsのドキュメント](https://docs.microsoft.com/azure/static-web-apps/)および[Next.jsのデプロイドキュメント](https://nextjs.org/docs/app/building-your-application/deploying)を参照してください。

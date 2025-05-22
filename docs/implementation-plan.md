@@ -84,9 +84,10 @@ gantt
 - **ファイルストレージ**: Amazon S3またはFirebase Storage
 
 ### インフラストラクチャ
-- **ホスティング**: Vercel
-- **CI/CD**: GitHub Actions
-- **モニタリング**: Sentry
+- **ホスティング**: Azure Static Web Apps
+- **サーバーレス機能**: Azure Functions
+- **CI/CD**: GitHub Actions（開発環境・本番環境用の2つのワークフロー）
+- **モニタリング**: Azure Application Insights
 
 ## マイルストーン
 

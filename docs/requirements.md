@@ -67,9 +67,10 @@
 - リレーショナルDB（PostgreSQL等）
 
 ### 3.4 インフラ
-- Vercel/Netlify（フロントエンド）
-- クラウドサービス（AWS/GCP/Azure）
-- CI/CDパイプライン
+- Azure Static Web Apps（フロントエンド）
+- Azure Functions（サーバーレス機能）
+- Azure関連サービス
+- GitHub Actionsによるデプロイパイプライン
 
 ## 4. 制約条件
 - 既存システムとの連携は当面なし
