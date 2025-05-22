@@ -45,7 +45,6 @@ GitHub Actionsワークフローは以下のように自動的にデプロイし
 ## Deploy on Azure Static Web Apps
 
 このNext.jsアプリケーションは、[Azure Static Web Apps](https://azure.microsoft.com/services/app-service/static/)にデプロイするように設定されています。GitHub Actionsワークフローを使用して、開発環境と本番環境の2つの環境にデプロイができます。
-
 Azure Static Web AppsはNext.jsアプリケーションのホスティングに最適で、Azure Functionsと統合してサーバーレス機能を提供します。
 
 詳細については、[Azure Static Web Appsのドキュメント](https://docs.microsoft.com/azure/static-web-apps/)および[Next.jsのデプロイドキュメント](https://nextjs.org/docs/app/building-your-application/deploying)を参照してください。

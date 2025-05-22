@@ -80,13 +80,14 @@ gantt
 - **検証**: Zod
 
 ### データベース・ストレージ
-- **データベース**: Prisma ORMまたはDrizzle + PostgreSQL
-- **ファイルストレージ**: Amazon S3またはFirebase Storage
+- **データベース**: Prisma ORMまたはDrizzle + Azure Database for PostgreSQL
+- **ファイルストレージ**: Azure Blob Storage
 
 ### インフラストラクチャ
-- **ホスティング**: Vercel
-- **CI/CD**: GitHub Actions
-- **モニタリング**: Sentry
+- **ホスティング**: Azure Static Web Apps
+- **サーバーレス機能**: Azure Functions
+- **CI/CD**: GitHub Actions（開発環境・本番環境用の2つのワークフロー）
+- **モニタリング**: Azure Application Insights
 
 ## マイルストーン
 
