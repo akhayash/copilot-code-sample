@@ -29,18 +29,18 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## CI/CD Environments
+## CI/CD 環境
 
-This project is set up with automated CI/CD workflows using GitHub Actions and Azure Static Web Apps with two separate environments:
+このプロジェクトは、GitHub ActionsとAzure Static Web Appsを使用した自動CI/CDワークフローで、以下の2つの環境が設定されています：
 
-- **Production Environment (main branch)**: [https://thankful-meadow-05eade300.6.azurestaticapps.net](https://thankful-meadow-05eade300.6.azurestaticapps.net)
-- **Development Environment (non-main branches)**: [https://white-wave-0cdad0c00.6.azurestaticapps.net](https://white-wave-0cdad0c00.6.azurestaticapps.net)
+- **本番環境（mainブランチ）**: [https://thankful-meadow-05eade300.6.azurestaticapps.net](https://thankful-meadow-05eade300.6.azurestaticapps.net)
+- **開発環境（main以外のブランチ）**: [https://white-wave-0cdad0c00.6.azurestaticapps.net](https://white-wave-0cdad0c00.6.azurestaticapps.net)
 
-The GitHub Actions workflow automatically deploys:
-- Changes to non-main branches to the development environment
-- Changes merged to the main branch to the production environment
+GitHub Actionsワークフローは以下のように自動的にデプロイします：
+- main以外のブランチへの変更は開発環境へ
+- mainブランチにマージされた変更は本番環境へ
 
-This setup allows for reviewing and testing changes in the development environment before they are merged to production.
+この設定により、変更を本番環境にマージする前に開発環境でレビューとテストを行うことができます。
 
 ## Deploy on Vercel
 
