@@ -34,50 +34,29 @@ const projectTemplates = [
   },
 ];
 
-// Mock function to simulate LLM processing
-const mockProcessNaturalLanguage = (input: string) => {
-  // In a real implementation, this would call an LLM API
-  return new Promise<{
-    title: string;
-    overview: string;
-    goals: string[];
-    timeline: Array<{ name: string; duration: string; start: string; end: string }>;
-    resources: Array<{ role: string; count: number }>;
-    risks: string[];
-  }>((resolve) => {
-    setTimeout(() => {
-      resolve({
-        title: input.split('.')[0] || "新規プロジェクト",
-        overview: input,
-        goals: [
-          "機能要件の完全実装",
-          "スケジュール通りの納品",
-          "品質基準の達成",
-          "ユーザー満足度の向上"
-        ],
-        timeline: [
-          { name: "要件定義", duration: "2週間", start: "2025/01/01", end: "2025/01/15" },
-          { name: "設計", duration: "3週間", start: "2025/01/16", end: "2025/02/05" },
-          { name: "開発", duration: "8週間", start: "2025/02/06", end: "2025/04/02" },
-          { name: "テスト", duration: "3週間", start: "2025/04/03", end: "2025/04/23" },
-          { name: "デプロイ", duration: "1週間", start: "2025/04/24", end: "2025/04/30" }
-        ],
-        resources: [
-          { role: "プロジェクトマネージャー", count: 1 },
-          { role: "シニア開発者", count: 2 },
-          { role: "開発者", count: 3 },
-          { role: "QAエンジニア", count: 2 },
-          { role: "UIデザイナー", count: 1 }
-        ],
-        risks: [
-          "要件の変更による遅延",
-          "チームメンバーの離脱",
-          "技術的な障害",
-          "外部依存関係の遅延"
-        ]
-      });
-    }, 1500);
-  });
+// Function to generate project plan using Azure OpenAI API
+const generateProjectPlan = async (input: string) => {
+  try {
+    const response = await fetch('/api/generate-plan', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        description: input,
+      }),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || 'Failed to generate project plan');
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('Error generating project plan:', error);
+    throw error;
+  }
 };
 
 const NewProjectPage = () => {
@@ -112,12 +91,13 @@ const NewProjectPage = () => {
 
     setIsProcessing(true);
     try {
-      const result = await mockProcessNaturalLanguage(projectInput);
+      const result = await generateProjectPlan(projectInput);
       setProjectPlan(result);
       setCurrentStep("result");
     } catch (error) {
       console.error("処理中にエラーが発生しました", error);
-      // エラー処理をここに追加
+      // Display error message to user
+      alert("プロジェクト計画の生成中にエラーが発生しました。後でもう一度お試しください。");
     } finally {
       setIsProcessing(false);
     }
